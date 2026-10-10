@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Molécula | Presença que transforma</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="chemistry-bg" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <div class="app-shell">
+      <header class="header">
+        <a class="brand" href="#home" aria-label="Molécula, início"><span class="brand-mark"><b>M</b><em></em><em></em><em></em></span><span>MOLÉCULA<small>QUÍMICA EM MOVIMENTO</small></span></a>
+        <nav aria-label="Navegação principal">
+          <a href="#home" data-page="home" class="active">Início</a>
+          <a href="#leaderboard" data-page="leaderboard">Leaderboard</a>
+          <a href="#schedule" data-page="schedule">Agenda</a>
+          <a href="#executivo" data-page="executivo">Executivo</a>
+        </nav>
+        <div class="semester"><span></span> 2º SEMESTRE · 2026</div>
+      </header>
+
+      <main>
+        <section id="home" class="page active">
+          <div class="hero-copy"><p class="eyebrow">CICLO DE PALESTRAS · QUÍMICA</p><h1>Presença que<br /><em>reage.</em></h1><p class="intro">Cada encontro soma conhecimento, conexões e novas perspectivas para a sua trajetória.</p><a class="button" href="#schedule">VER PRÓXIMA PALESTRA <b>→</b></a></div>
+          <div class="next-talk card"><p class="eyebrow">PRÓXIMA PALESTRA</p><div class="date-pill">28 <span>OUT</span></div><div><h2>Química verde<br />na indústria</h2><p>Prof. Ana Martins · 19h00</p><span class="room">AUDITÓRIO PRINCIPAL</span></div></div>
+          <section class="ranking-preview"><div class="section-head"><div><p class="eyebrow">RANKING ATUAL</p><h2>Quem está no topo</h2></div><a href="#leaderboard">VER CLASSIFICAÇÃO COMPLETA <b>↗</b></a></div><div id="top-five" class="people-grid"></div></section>
+          <section class="briefing"><div><p class="eyebrow">CONTEÚDO DA APRESENTAÇÃO</p><h2 id="briefing-title">Química verde: inovação que respeita o amanhã</h2></div><p id="briefing-text">Uma conversa sobre processos mais limpos, matérias-primas renováveis e como a indústria está redesenhando sua relação com o planeta.</p><span class="rotative">ATUALIZADO PARA ESTA PALESTRA</span></section>
+        </section>
+
+        <section id="leaderboard" class="page"><div class="page-title"><p class="eyebrow">ENGAJAMENTO</p><h1>Leaderboard</h1><p>Presença é constância. A classificação é atualizada pela área Executiva.</p></div><div class="ranking-summary"><div><span id="leader-total">7</span><small>ALUNOS NA BASE</small></div><div><span id="last-attendance">—</span><small>PRESENTES NA ÚLTIMA PALESTRA</small></div><div><span id="attendance-average">—</span><small>PRESENÇA MÉDIA</small></div></div><div class="top-five-leaders"><div class="section-head"><div><p class="eyebrow">TOP 5</p><h2>Maior presença no ciclo</h2></div><span>ATUALIZADO AGORA</span></div><div id="leader-top-five" class="leaders-podium"></div></div><div class="leader-card"><div class="leader-heading"><span>POSIÇÃO</span><span>ALUNO</span><span>PRESENÇAS</span><span>ÍNDICE</span></div><div id="leader-list"></div></div></section>
+
+        <section id="schedule" class="page"><div class="page-title"><p class="eyebrow">PROGRAMAÇÃO</p><h1>Agenda de palestras</h1><p>Confira os próximos encontros do ciclo de palestras de Química.</p></div><div class="section-head agenda-head"><div><p class="eyebrow">PRÓXIMOS ENCONTROS</p><h2>Programação publicada</h2></div></div><div id="schedule-list" class="schedule-list"></div></section>
+
+        <section id="executivo" class="page"><div class="page-title"><p class="eyebrow">CENTRAL DE DADOS</p><h1>Executivo</h1><p>Atualize a base, a programação e os indicadores que alimentam toda a plataforma.</p></div><div class="executive-actions"><div class="import-panel"><div><p class="eyebrow">IMPORTAR PRESENÇAS</p><h2>Atualizar base do ciclo</h2><p>Combine a base acumulada com a lista da última palestra. O Leaderboard e a Home são atualizados automaticamente.</p></div><div class="file-fields"><label>BASE ACUMULADA<input id="base-file" type="file" accept=".xlsx,.xls,.csv" /><span id="base-file-name">Selecionar arquivo</span></label><label>ÚLTIMA PALESTRA<input id="last-file" type="file" accept=".xlsx,.xls,.csv" /><span id="last-file-name">Selecionar arquivo</span></label><button id="merge-files" disabled>ATUALIZAR DADOS <b>→</b></button></div></div><div class="schedule-manager"><div><p class="eyebrow">NOVA PALESTRA</p><h2>Adicionar à agenda</h2><form id="talk-form"><label>TEMA<input id="talk-title" required placeholder="Ex.: Química e biotecnologia" /></label><label>PALESTRANTE<input id="talk-speaker" required placeholder="Nome do convidado" /></label><div class="form-row"><label>DATA<input id="talk-date-input" required type="date" /></label><label>HORÁRIO<input id="talk-time" required type="time" value="19:00" /></label></div><label>LOCAL<input id="talk-room" required placeholder="Auditório Principal" /></label><button>PUBLICAR NA AGENDA <b>→</b></button></form></div><aside><p class="eyebrow">GESTÃO DA AGENDA</p><h2>Publicação<br />centralizada</h2><p>As novas palestras aparecem automaticamente na aba Agenda para todos os alunos.</p><span>PROGRAMAÇÃO DO CICLO</span></aside></div></div><p class="import-note">Formato esperado: base com <b>Aluno</b>, <b>Presenças</b> e <b>Total de palestras</b>; presença recente com <b>Aluno</b> e <b>Presente</b> (Sim/Não). Colunas de e-mail também são aceitas.</p><div class="metrics"><article><span>ALUNOS ATIVOS</span><strong id="executive-students">7</strong><small>base consolidada</small></article><article><span>MÉDIA DE PRESENÇA</span><strong id="executive-rate">—<em>%</em></strong><small>do ciclo atual</small></article><article><span>MAIOR PRESENÇA</span><strong id="executive-best">—<em>%</em></strong><small id="executive-best-name">aguardando atualização</small></article></div><div class="executive-grid"><article class="insight"><p class="eyebrow">DISTRIBUIÇÃO DA TURMA</p><h2>Presença por aluno</h2><p id="executive-insight">Importe uma base para analisar a frequência da turma e identificar quem precisa de atenção.</p><div id="bar-chart" class="bar-chart"></div></article><article class="action"><p class="eyebrow">CONTEÚDO ROTATIVO</p><h2>Atualize o briefing</h2><p>Carregue o documento da palestra antes do encontro para manter o conteúdo da Home sempre atual.</p><button onclick="alert('Conecte aqui o repositório de documentos do time interno.')">SIMULAR ATUALIZAÇÃO <b>→</b></button></article></div></section>
+      </main>
+      <footer>PLATAFORMA INTERNA · CICLO DE PALESTRAS DE QUÍMICA</footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
